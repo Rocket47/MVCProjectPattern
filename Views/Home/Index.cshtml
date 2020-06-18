@@ -1,0 +1,31 @@
+﻿@model IEnumerable<MVCApps.Models.Course>
+
+@{
+  //  ViewData["Title"] = "Course list";
+  Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>University</title>
+</head>
+<body>
+    <h3>Courses</h3>
+    <table>
+      <tr>          
+            <td>Name</td>
+            <td>Description</td>
+            <td></td>
+        </tr>
+          @foreach (var course in Model)
+            {
+    <tr>        
+        <td><a href="~/Home/showGroups/@course.course_ID">@course.name</a></td>
+        <td>@course.description.</td>
+    </tr>            
+        }              
+        </table>
+</body>
+</html>
+

@@ -1,0 +1,41 @@
+@model IEnumerable<MVCApps.Models.Group>
+
+@{
+    //  ViewData["Title"] = "Course list";
+    Layout = null;
+}
+<!DOCTYPE html>
+
+    <html>
+    <head>
+        <title>University</title>
+    </head>
+    <body>
+        <h3>Groups</h3>
+        <table>
+            <tr>
+                <td>GROUP ID</td>
+                <td>COURSE_NAME</td>
+                <td>GROUP_NAME</td>
+                <td></td>
+            </tr>
+            @if (ViewBag.StatusRemoveGroup == 0)
+            {
+                <h><font color="red">ГРУППА УДАЛЕНА!</font></h>
+            }                    
+               @foreach (var group in Model)
+                {
+                    @if (group.Course.course_ID == ViewBag.group_ID)
+                    {
+                        <tr>
+                            <td><a href="~/Home/showStudents/@group.group_ID">@group.group_ID</a></td>
+                            <td>@group.Course.name</td>
+                            <td style="padding-right: 20px">@group.name</td>
+                            <td><a href="~/Home/changeNameOfGroup/?groupName=@group.name&mGroup=@group.group_ID&mCourse=@group.Course.name">Изменить имя группы</a></td>
+                            <td><a href="~/Home/removeGroup/?groupId=@group.group_ID">Удалить группу</a></td>
+                        </tr>
+                    }
+               }            
+        </table>
+    </body>
+</html>

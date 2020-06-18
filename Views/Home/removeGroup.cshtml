@@ -1,0 +1,23 @@
+@model IEnumerable<MVCApps.Models.Group>
+
+@{    
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<body>
+    <head>
+        <title>University</title>
+    </head>
+   
+
+    <form method="post">
+        <input type="hidden" />
+        <table>     
+            <a>@ViewBag.HtmlStr</a>
+            <td><input type="submit" value="Вернуться к списку групп." /> </td>                      
+        </table>
+
+    </form>
+</body>
+</html>

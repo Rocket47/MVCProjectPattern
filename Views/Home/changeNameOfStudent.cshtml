@@ -1,0 +1,31 @@
+@model IEnumerable<MVCApps.Models.Student>
+
+@{
+  //  ViewData["Title"] = "Course list";
+  Layout = null;
+}
+<!DOCTYPE html>
+
+    <html>
+    <body>
+        <div>       
+            <h3>Изменить имя студента</h3>            
+            <form method="post">
+                <input type="hidden" />
+                <table>                    
+                    <tr>
+                        <td>Новое имя:</td>
+                        <td><input type="text" name="first_Name" placeholder= "@ViewBag.HTMLStudentsFirstName" /></td> 
+                        <tr>                     
+                        <td>Новая фамилия:</td>
+                        <td><input type="text" name="last_Name"  placeholder= "@ViewBag.HTMLStudentsLastName" /></td>
+                        </tr>  
+                        <td><input type="submit" value="Отправить" /> </td>
+                     </tr>   
+                    </tr>                                                                             
+                   </table>
+                            
+            </form>
+        </div>
+    </body>
+    </html>

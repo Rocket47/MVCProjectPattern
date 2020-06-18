@@ -1,0 +1,26 @@
+@model IEnumerable<MVCApps.Models.Group>
+
+@{
+  //  ViewData["Title"] = "Course list";
+  Layout = null;
+}
+<!DOCTYPE html>
+
+    <html>
+    <body>
+        <div>       
+            <h3>Изменить название группы</h3>            
+            <form method="post">
+                <input type="hidden" />
+                <table>                    
+                    <tr>
+                        <td>Новое название:</td>
+                        <td><input type="text" name="name" placeholder= "@ViewBag.HTMLGroupName" /></td>
+                        <tr><td><input type="submit" value="Отправить" /> </td></tr>
+                    </tr>                
+                   </table>
+                            
+            </form>
+        </div>
+    </body>
+    </html>

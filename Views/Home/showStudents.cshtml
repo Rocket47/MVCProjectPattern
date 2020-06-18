@@ -1,0 +1,38 @@
+@model IEnumerable<MVCApps.Models.Student>
+
+@{
+  //  ViewData["Title"] = "Course list";
+  Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>University</title>
+</head>
+<body>
+    <h3>Groups</h3>
+    <table>
+      <tr>
+            <td>STUDENT ID</td>
+            <td>GROUP ID</td>
+            <td>FIRST NAME</td>
+            <td>LAST NAME</td>            
+            <td></td>
+        </tr>
+          @foreach (var student in Model)
+            {
+                @if (student.Group.group_ID == ViewBag.student_ID)
+                {
+            <tr>                
+                <td>@student.student_ID</td>
+                <td>@student.Group.name</td>
+                <td>@student.first_Name</td>  
+                <td>@student.last_Name</td>                     
+                <td><a href="~/Home/changeNameOfStudent/?studentName=@student.first_Name&studentLastName=@student.last_Name&student_id=@student.student_ID">Изменить имя студента</a></td>                                              
+            </tr>            
+            }
+        }              
+        </table>
+</body>
+</html>
